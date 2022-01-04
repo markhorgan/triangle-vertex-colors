@@ -2,13 +2,12 @@ import {
   PerspectiveCamera, 
   WebGLRenderer, 
   Scene, 
-  HemisphereLight,
   Mesh,
-  MeshStandardMaterial,
   BufferGeometry,
   BufferAttribute,
   Float32BufferAttribute,
-  MathUtils} from 'three';
+  MathUtils,
+  MeshBasicMaterial} from 'three';
 
 class App {
   constructor() {
@@ -34,7 +33,7 @@ class App {
 
   createScene() {
     const geometry = new BufferGeometry();
-    const radius = Math.min(window.innerWidth, window.innerHeight) * 0.5;
+    const radius = Math.min(window.innerWidth, window.innerHeight) * 0.6;
     const angleStep = Math.PI * 2 / 3;
     const offsetAngle = Math.PI / 2;
 
@@ -55,12 +54,8 @@ class App {
     geometry.setAttribute('color', new BufferAttribute(colors, 3));
     geometry.center();
 
-    const mesh = new Mesh(geometry, new MeshStandardMaterial({ vertexColors: true }));
+    const mesh = new Mesh(geometry, new MeshBasicMaterial({ vertexColors: true }));
     this.scene.add(mesh);
-
-    const light = new HemisphereLight(0xffffff, 0xbbbbff, 1);
-    light.position.set(0.5, 1, 0.25);
-    this.scene.add(light);
   }
 
   render() {
