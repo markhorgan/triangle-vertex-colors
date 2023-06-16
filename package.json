@@ -1,12 +1,12 @@
 {
-  "name": "vertex-colors",
+  "name": "triangle-vertex-colors",
   "version": "1.0.0",
   "description": "Displays a triangle with a different color at each vertex.",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build --public-url '.' src/index.html"
   },
-  "author": "",
+  "author": "Mark Horgan",
   "license": "ISC",
   "dependencies": {
     "three": "^0.135.0"

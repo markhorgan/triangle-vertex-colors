@@ -13,10 +13,9 @@ class App {
   constructor() {
     const fov = 75;
     this.camera = new PerspectiveCamera(fov, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z= (window.innerHeight / 2) / Math.tan(MathUtils.degToRad(fov / 2));
+    this.camera.position.z = (window.innerHeight / 2) / Math.tan(MathUtils.degToRad(fov / 2));
     this.scene = new Scene();
     this.scene.background = null;
-  
     this.renderer = new WebGLRenderer({
         antialias: true,
         alpha: true
